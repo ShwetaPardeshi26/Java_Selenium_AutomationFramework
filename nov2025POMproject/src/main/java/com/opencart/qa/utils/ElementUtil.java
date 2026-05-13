@@ -71,6 +71,15 @@ public class ElementUtil {
 	public void doClick(By locator) {
 		getElement(locator).click();
 	}
+	/**
+	 * this method wait for element to be visible and enabled such that you can click it
+	 * @param locator
+	 * @param timeOut
+	 */
+	public void waitForElementReadyAndclickbale(By locator,long timeOut) {
+		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(locator)).click();
+	}
 
 	public boolean isElementDisplayed(By locator) {
 		try {
@@ -315,7 +324,7 @@ public class ElementUtil {
 		}
 		return driver.getCurrentUrl();
 	}
-	public WebElement  waitForElementVisible(By locator, long timeout) {
+	public WebElement waitForElementVisible(By locator, long timeout) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeout));
 		try {
 			wait.until(ExpectedConditions.visibilityOf(getElement(locator)));

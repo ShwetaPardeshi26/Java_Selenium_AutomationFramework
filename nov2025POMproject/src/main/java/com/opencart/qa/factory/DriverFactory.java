@@ -14,10 +14,12 @@ import org.openqa.selenium.safari.SafariDriver;
 import com.opencart.qa.exceptions.BrowserException;
 
 public class DriverFactory {
-	
+	OptionsManager optionmanger;
 	WebDriver driver;
 	Properties prop;
 	public static String highlight;
+	public static ThreadLocal<WebDriver> tlDriver=new ThreadLocal<>();
+	
 	/**
 	 * This method is used to initialize the driver on the basis of given browsername
 	 * @param browserName
@@ -27,30 +29,40 @@ public class DriverFactory {
 	public WebDriver initDriver(Properties prop) {
 		String browserName=prop.getProperty("browser");
 		System.out.println("Browser name is : "+browserName);
-		
 		highlight=prop.getProperty("highlight");
+		optionmanger=new OptionsManager(prop);
 		
 		switch(browserName.trim().toLowerCase()){
 		case "chrome":
-			driver=new ChromeDriver();
+			tlDriver.set(new ChromeDriver(optionmanger.getChromeOptions()));
+			//driver=new ChromeDriver(optionmanger.getChromeOptions());
 			break;
 		case "firefox":
-			driver=new FirefoxDriver();
+			tlDriver.set(new FirefoxDriver(optionmanger.getFirefoxOptions()));
+			//driver=new FirefoxDriver(optionmanger.getFirefoxOptions());
 			break;
 		case "edge":
-			driver=new EdgeDriver();
+			tlDriver.set(new EdgeDriver(optionmanger.getEdgeOptions()));
+			//driver=new EdgeDriver(optionmanger.getEdgeOptions());
 			break;
 		case "safari":
-			driver=new SafariDriver();
+			tlDriver.set(new SafariDriver());
+			//driver=new SafariDriver();
 			break;
 		default :
 			System.out.println("=====Invalid Browser====="+browserName);
 			throw new BrowserException("=====Invalid Browser=====");
 		}
-		driver.manage().window().maximize();
-		driver.manage().deleteAllCookies();
-		driver.get(prop.getProperty("url"));
-		return driver;
+		getDriver().manage().window().maximize();
+		getDriver().manage().deleteAllCookies();
+		getDriver().get(prop.getProperty("url"));
+		return getDriver();
+	}
+	/**
+	 * this will return local copy of driver for a specific thread
+	 */
+	public static WebDriver getDriver() {
+		return tlDriver.get();
 	}
 	/**This method is used to initialize properties file
 	 * @return it returns properties class cobject which is having all the properties (key-value pair)

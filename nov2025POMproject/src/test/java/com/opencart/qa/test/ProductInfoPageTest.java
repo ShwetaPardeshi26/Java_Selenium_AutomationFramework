@@ -27,8 +27,6 @@ public class ProductInfoPageTest extends BaseTest {
 		
 	}
 	
-	
-	
 	@Test(dataProvider="ProductTestData")
 	public void productHeaderTest(String searchKey,String productName) {
 		resultpage = homepage.doSearch(searchKey);

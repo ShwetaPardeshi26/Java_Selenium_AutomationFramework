@@ -72,9 +72,10 @@ public class ProductInfoPage {
 	}
 	
 	public Map<String, String> getProductInfoData() {
-		//productMap=new HashMap<String,String>();
-		//productMap=new LinkedHashMap<String,String>();
-		productMap=new TreeMap<String,String>();
+		//productMap=new HashMap<String,String>();//no insertion order
+		//productMap=new LinkedHashMap<String,String>();//insertion order maintained
+		productMap=new TreeMap<String,String>();// sorting according to key
+		
 		productMap.put("productname", getHeaderText());
 		productMap.put("imageCount",String.valueOf(getImagesCount()));
 		getProductMetadata();

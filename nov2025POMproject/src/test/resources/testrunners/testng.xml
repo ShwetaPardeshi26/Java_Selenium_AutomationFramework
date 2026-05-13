@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="opencart login page regression suite" parallel="tests"
-	thread-count="3">
+	thread-count="5">
+	<listeners>
+		<listener
+			class-name="com.aventstack.chaintest.plugins.ChainTestListener" />
+		<listener class-name="com.opencart.qa.listeners.TestAllureListener" />
+		<!--<listener class-name="com.opencart.qa.listeners.AnnotationTransformer" />-->
+	</listeners>
 	<test name="Login Page Test">
 		<parameter name="browser" value="firefox" />
 		<classes>
@@ -15,12 +21,17 @@
 			<class name="com.opencart.qa.test.HomePageTest" />
 		</classes>
 	</test>
-	<test name="ProductInfoPageTest Page Test">
+	<!--<test name="ProductInfoPageTest Page Test">
 		<parameter name="browser" value="chrome" />
 		<classes>
 			<class name="com.opencart.qa.test.ProductInfoPageTest" />
 		</classes>
-	</test> <!--
-	Test -->
+	</test> 
+	<test name="Register Page Test">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="com.opencart.qa.test.RegisterPageTest" />
+		</classes>
+	</test>-->
 </suite> <!--
 Suite -->
