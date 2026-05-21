@@ -3,12 +3,14 @@ package com.opencart.qa.test;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import com.aventstack.chaintest.plugins.ChainTestListener;
 import com.opencart.qa.pages.HomePage;
 import com.opencart.qa.utils.AppConstants;
 
 public class LoginPageTest extends BaseTest{
      @Test
      public void LoginPageTitleTest() {
+    	 ChainTestListener.log("starting LoginPageTitleTests ");
     	Assert.assertEquals(loginpage.getLoginPageTitle(), AppConstants.LOGIN_PAGE_TITLE);
      }
      @Test
@@ -22,6 +24,8 @@ public class LoginPageTest extends BaseTest{
      @Test(priority=Integer.MAX_VALUE)
      public void loginTest() {
     	 homepage =loginpage.doLogin(prop.getProperty("username").trim(),prop.getProperty("password").trim());
+    	 ChainTestListener.log("home page title is : "+homepage.getHomePageTitle());
     	 Assert.assertEquals(homepage.getHomePageTitle(), AppConstants.HOME_PAGE_TITLE);
      }
+    
 }

@@ -4,30 +4,20 @@
   <listeners>
     <listener class-name="com.aventstack.chaintest.plugins.ChainTestListener"/>
     <listener class-name="com.opencart.qa.listeners.TestAllureListener"/>
+    <listener class-name="com.opencart.qa.listeners.AnnotationTransformer"/>
   </listeners>
-  <test thread-count="5" parallel="tests" name="Login Page Test(failed)">
-    <parameter name="browser" value="firefox"/>
-    <classes>
-      <class name="com.opencart.qa.test.LoginPageTest">
-        <methods>
-          <include name="loginTest"/>
-          <include name="setup"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- com.opencart.qa.test.LoginPageTest -->
-    </classes>
-  </test> <!-- Login Page Test(failed) -->
-  <test thread-count="5" parallel="tests" name="Home Page Test(failed)">
+  <test thread-count="5" parallel="tests" name="Register Page Test(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="com.opencart.qa.test.HomePageTest">
+      <class name="com.opencart.qa.test.RegisterPageTest">
         <methods>
-          <include name="homePageSetup"/>
-          <include name="homePageTitleTest"/>
+          <include name="regSetUp"/>
+          <include name="userRegisterTest" invocation-numbers="2 3"/>
           <include name="setup"/>
           <include name="tearDown"/>
+          <include name="attachScreenshot"/>
         </methods>
-      </class> <!-- com.opencart.qa.test.HomePageTest -->
+      </class> <!-- com.opencart.qa.test.RegisterPageTest -->
     </classes>
-  </test> <!-- Home Page Test(failed) -->
+  </test> <!-- Register Page Test(failed) -->
 </suite> <!-- Failed suite [opencart login page regression suite] -->

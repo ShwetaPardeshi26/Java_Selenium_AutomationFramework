@@ -6,9 +6,10 @@
       <class name="com.opencart.qa.test.RegisterPageTest">
         <methods>
           <include name="regSetUp"/>
-          <include name="userRegisterTest" invocation-numbers="0 1 2 3"/>
+          <include name="userRegisterTest"/>
           <include name="setup"/>
           <include name="tearDown"/>
+          <include name="attachScreenshot"/>
         </methods>
       </class> <!-- com.opencart.qa.test.RegisterPageTest -->
     </classes>

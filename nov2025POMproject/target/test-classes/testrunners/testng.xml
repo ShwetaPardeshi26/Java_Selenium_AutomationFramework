@@ -3,25 +3,24 @@
 <suite name="opencart login page regression suite" parallel="tests"
 	thread-count="5">
 	<listeners>
-		<listener
-			class-name="com.aventstack.chaintest.plugins.ChainTestListener" />
+		<listener class-name="com.aventstack.chaintest.plugins.ChainTestListener" />
 		<listener class-name="com.opencart.qa.listeners.TestAllureListener" />
-		<!--<listener class-name="com.opencart.qa.listeners.AnnotationTransformer" />-->
+		<listener class-name="com.opencart.qa.listeners.AnnotationTransformer" />
 	</listeners>
+	
 	<test name="Login Page Test">
-		<parameter name="browser" value="firefox" />
+		<parameter name="browser" value="chrome" />
 		<classes>
 			<class name="com.opencart.qa.test.LoginPageTest" />
 		</classes>
-	</test> <!--
-	Test -->
+	</test> <!--Test -->
 	<test name="Home Page Test">
 		<parameter name="browser" value="chrome" />
 		<classes>
 			<class name="com.opencart.qa.test.HomePageTest" />
 		</classes>
 	</test>
-	<!--<test name="ProductInfoPageTest Page Test">
+	<test name="ProductInfoPageTest Page Test">
 		<parameter name="browser" value="chrome" />
 		<classes>
 			<class name="com.opencart.qa.test.ProductInfoPageTest" />
@@ -32,6 +31,5 @@
 		<classes>
 			<class name="com.opencart.qa.test.RegisterPageTest" />
 		</classes>
-	</test>-->
-</suite> <!--
-Suite -->
+	</test>
+</suite> <!--Suite -->

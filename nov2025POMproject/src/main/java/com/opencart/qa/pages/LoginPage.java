@@ -41,9 +41,9 @@ public class LoginPage {
 	}
 	public HomePage doLogin(String userName,String pwd) {
 		System.out.println("Application credentials are :"+userName+ " : "+pwd);
-		eleUtil.doSendKeys(emailId,userName,AppConstants.MEDIUM_TIME_OUT);
+		eleUtil.doSendKeys(emailId,userName,AppConstants.LONG_TIME_OUT);
 		eleUtil.doSendKeys(password, pwd);
-		eleUtil.doClick(loginBtn);	
+		eleUtil.doClick(loginBtn);
 		return new HomePage(driver);
 	}
 	

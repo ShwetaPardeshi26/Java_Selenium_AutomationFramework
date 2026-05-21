@@ -8,6 +8,8 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.opencart.qa.utils.AppConstants;
+import com.opencart.qa.utils.CsvUtil;
+import com.opencart.qa.utils.ExcelUtil;
 
 public class RegisterPageTest  extends BaseTest {
 	@BeforeClass
@@ -15,10 +17,17 @@ public class RegisterPageTest  extends BaseTest {
 		registerpage=loginpage.navigateToRegisterationPage();
 	}
 
-	@Test(dataProvider="registerTestData")
-	public void userRegisterTest(String firstname,String lastname,String telephone,String password,String subscriber) throws InterruptedException {
-	    Assert.assertTrue(registerpage.userRegisteration(firstname, lastname,telephone, password,subscriber));
+	
+	@DataProvider
+	public Object[][] getUserRegExcelTestData(){
+		return ExcelUtil.getTestData(AppConstants.REGISTER__SHEET_NAME);
 	}
+	
+	@DataProvider
+	public Object[][] getUserRegCSVTestData(){
+		return CsvUtil.csvData(AppConstants.REGISTER__SHEET_NAME);
+	}
+	
 	
 	@DataProvider(name="registerTestData")
 	public Object[][] registerationData() {
@@ -29,5 +38,11 @@ public class RegisterPageTest  extends BaseTest {
 			{"rani","man","78634523546","rani@123","yes"},
 		};
 	}
+	
+	@Test(dataProvider="getUserRegExcelTestData")
+	public void userRegisterTest(String firstname,String lastname,String telephone,String password,String subscriber) throws InterruptedException {
+	    Assert.assertTrue(registerpage.userRegisteration(firstname, lastname,telephone, password,subscriber));
+	}
+	
 
 }

@@ -37,7 +37,7 @@ public class HomePageTest extends BaseTest{
     public Object[][] searchTestDataProvider() {
     	return new Object[][] {
     			{"macbook",3},
-    			{"imac",1},
+    			{"imac",1},	
     			{"airtel",0},
     			{"canon",1},
     			{"samsung",2}

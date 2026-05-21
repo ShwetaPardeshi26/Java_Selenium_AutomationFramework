@@ -1,10 +1,13 @@
 package com.opencart.qa.factory;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -12,6 +15,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
 import com.opencart.qa.exceptions.BrowserException;
+import com.opencart.qa.exceptions.FrameworkException;
 
 public class DriverFactory {
 	OptionsManager optionmanger;
@@ -68,18 +72,59 @@ public class DriverFactory {
 	 * @return it returns properties class cobject which is having all the properties (key-value pair)
 	 */
 	
+	//mvn clean install -Denv="QA"
 	public Properties initProp() {
+		FileInputStream fis=null;
+		
+		String envName=System.getProperty("env");
+		System.out.println("environmment name is : "+envName);
 		try {
-			FileInputStream fis=new FileInputStream("./src/test/resources/config/config.properties");
-			prop=new Properties();
-			prop.load(fis);
-		} catch (FileNotFoundException e) {
-		   e.printStackTrace();
-		}catch(IOException e) {
+		if(envName==null) {
+		System.out.println("Environment paramter is null, so by defalut execution is happening in QA environment");	
+		fis=new FileInputStream("./src/test/resources/config/config.qa.properties ");
+		}else {
+			switch (envName.trim().toLowerCase()) {
+			case "qa":
+				fis=new FileInputStream("./src/test/resources/config/config.qa.properties ");
+				break;
+			case "dev":
+				fis=new FileInputStream("./src/test/resources/config/config.dev.properties ");
+				break;
+			case "staged":
+				fis=new FileInputStream("./src/test/resources/config/config.staged.properties ");
+				break;
+			case "prod":
+				fis=new FileInputStream("./src/test/resources/config/config.properties ");
+				break;
+			default:
+				System.out.println("===========INVALIID ENVIRONMENT==============");
+				throw new FrameworkException("===========INVALIID ENVIRONMENT==============");
+			}
+		}
+		}catch(FileNotFoundException e) {
 			e.printStackTrace();
 		}
-		return prop;
+		prop=new Properties();
+		try {
+			prop.load(fis);
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}
+        return prop;
+	}
+	/*
+	 * takes screnshot
+	 */
+	public static File getScreenshotFile() {
+		return ((TakesScreenshot) getDriver()).getScreenshotAs((OutputType.FILE));
+	}
+    
+	public static byte[] getScreenshotByte() {
+		return ((TakesScreenshot) getDriver()).getScreenshotAs((OutputType.BYTES));
 	}
 	
-
+	public static String getScreenshotBase64() {
+		return ((TakesScreenshot) getDriver()).getScreenshotAs((OutputType.BASE64));
+	}
 }

@@ -50,7 +50,7 @@ public class HomePage{
 			
 			public ResultPage doSearch(String searchKey) {
 				System.out.println("search key is :"+searchKey);
-				eleUtil.doSendKeys(searchField, searchKey, AppConstants.SHORT_TIME_OUT);
+				eleUtil.doSendKeys(searchField, searchKey, AppConstants.LONG_TIME_OUT);
 				eleUtil.doClick(searchIcon);
 				return new ResultPage(driver);
 			}

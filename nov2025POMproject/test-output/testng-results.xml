@@ -1,86 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="12" passed="10" failed="2" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-05-13T18:46:09 IST" name="opencart login page regression suite" finished-at="2026-05-13T18:47:30 IST" duration-ms="81239">
+  <suite started-at="2026-05-20T21:39:40 IST" name="Default suite" finished-at="2026-05-20T21:39:47 IST" duration-ms="6712">
     <groups>
     </groups>
-    <test started-at="2026-05-13T18:46:09 IST" name="Login Page Test" finished-at="2026-05-13T18:47:03 IST" duration-ms="53885">
-      <class name="com.opencart.qa.test.LoginPageTest">
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.opencart.qa.test.LoginPageTest@3a3ed300]" started-at="2026-05-13T18:46:09 IST" name="setup" finished-at="2026-05-13T18:46:46 IST" duration-ms="36641" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[firefox]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="LoginPageTitleTest()[pri:0, instance:com.opencart.qa.test.LoginPageTest@3a3ed300]" started-at="2026-05-13T18:46:46 IST" name="LoginPageTitleTest" finished-at="2026-05-13T18:46:46 IST" duration-ms="222" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- LoginPageTitleTest -->
-        <test-method signature="LoginPageURLTest()[pri:0, instance:com.opencart.qa.test.LoginPageTest@3a3ed300]" started-at="2026-05-13T18:46:46 IST" name="LoginPageURLTest" finished-at="2026-05-13T18:46:46 IST" duration-ms="45" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- LoginPageURLTest -->
-        <test-method signature="forwardPwdLinkExitTest()[pri:0, instance:com.opencart.qa.test.LoginPageTest@3a3ed300]" started-at="2026-05-13T18:46:46 IST" name="forwardPwdLinkExitTest" finished-at="2026-05-13T18:46:49 IST" duration-ms="2511" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- forwardPwdLinkExitTest -->
-        <test-method signature="loginTest()[pri:2147483647, instance:com.opencart.qa.test.LoginPageTest@3a3ed300]" started-at="2026-05-13T18:46:49 IST" name="loginTest" finished-at="2026-05-13T18:47:00 IST" duration-ms="11649" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [My Account123] but found [null]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [My Account123] but found [null]
-at org.testng.Assert.fail(Assert.java:111)
-at org.testng.Assert.failNotEquals(Assert.java:1590)
-at org.testng.Assert.assertEqualsImpl(Assert.java:150)
-at org.testng.Assert.assertEquals(Assert.java:132)
-at org.testng.Assert.assertEquals(Assert.java:656)
-at org.testng.Assert.assertEquals(Assert.java:666)
-at com.opencart.qa.test.LoginPageTest.loginTest(LoginPageTest.java:25)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
-at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
-at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-at java.base/java.lang.Thread.run(Thread.java:842)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.opencart.qa.test.LoginPageTest@3a3ed300]" started-at="2026-05-13T18:47:01 IST" name="tearDown" finished-at="2026-05-13T18:47:03 IST" duration-ms="1704" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.opencart.qa.test.LoginPageTest -->
-    </test> <!-- Login Page Test -->
-    <test started-at="2026-05-13T18:46:09 IST" name="Home Page Test" finished-at="2026-05-13T18:47:30 IST" duration-ms="81239">
-      <class name="com.opencart.qa.test.HomePageTest">
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.opencart.qa.test.HomePageTest@640cc04b]" started-at="2026-05-13T18:46:09 IST" name="setup" finished-at="2026-05-13T18:46:56 IST" duration-ms="47387" status="PASS">
+    <test started-at="2026-05-20T21:39:40 IST" name="Default test" finished-at="2026-05-20T21:39:47 IST" duration-ms="6712">
+      <class name="com.opencart.qa.test.RegisterPageTest">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.opencart.qa.test.RegisterPageTest@3a2b2322]" started-at="2026-05-20T21:39:40 IST" name="setup" finished-at="2026-05-20T21:39:45 IST" duration-ms="4750" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -91,37 +18,24 @@ at java.base/java.lang.Thread.run(Thread.java:842)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="homePageSetup()[pri:0, instance:com.opencart.qa.test.HomePageTest@640cc04b]" started-at="2026-05-13T18:46:56 IST" name="homePageSetup" finished-at="2026-05-13T18:47:01 IST" duration-ms="4464" status="PASS">
+        <test-method is-config="true" signature="regSetUp()[pri:0, instance:com.opencart.qa.test.RegisterPageTest@3a2b2322]" started-at="2026-05-20T21:39:45 IST" name="regSetUp" finished-at="2026-05-20T21:39:46 IST" duration-ms="1020" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- homePageSetup -->
-        <test-method signature="headerTest()[pri:0, instance:com.opencart.qa.test.HomePageTest@640cc04b]" started-at="2026-05-13T18:47:01 IST" name="headerTest" finished-at="2026-05-13T18:47:01 IST" duration-ms="495" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- headerTest -->
-        <test-method signature="homePageTitleTest()[pri:0, instance:com.opencart.qa.test.HomePageTest@640cc04b]" started-at="2026-05-13T18:47:01 IST" name="homePageTitleTest" finished-at="2026-05-13T18:47:07 IST" duration-ms="5282" status="FAIL">
-          <exception class="java.lang.AssertionError">
+        </test-method> <!-- regSetUp -->
+        <test-method signature="userRegisterTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.opencart.qa.test.RegisterPageTest@3a2b2322]" started-at="2026-05-20T21:39:46 IST" name="userRegisterTest" data-provider="getUserRegCSVTestData" finished-at="2026-05-20T21:39:46 IST" duration-ms="0" status="FAIL">
+          <exception class="java.lang.RuntimeException">
             <message>
-              <![CDATA[expected [My Account123] but found [null]]]>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "java.util.List.size()" because "rows" is null]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [My Account123] but found [null]
-at org.testng.Assert.fail(Assert.java:111)
-at org.testng.Assert.failNotEquals(Assert.java:1590)
-at org.testng.Assert.assertEqualsImpl(Assert.java:150)
-at org.testng.Assert.assertEquals(Assert.java:132)
-at org.testng.Assert.assertEquals(Assert.java:656)
-at org.testng.Assert.assertEquals(Assert.java:666)
-at com.opencart.qa.test.HomePageTest.homePageTitleTest(HomePageTest.java:25)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+              <![CDATA[java.lang.RuntimeException: java.lang.NullPointerException: Cannot invoke "java.util.List.size()" because "rows" is null
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:58)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeDataProvider(MethodInvocationHelper.java:159)
+at org.testng.internal.Parameters.handleParameters(Parameters.java:809)
+at org.testng.internal.Parameters.handleParameters(Parameters.java:734)
+at org.testng.internal.invokers.ParameterHandler.handleParameters(ParameterHandler.java:72)
+at org.testng.internal.invokers.ParameterHandler.createParameters(ParameterHandler.java:51)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:949)
 at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
 at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
 at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
@@ -129,107 +43,40 @@ at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 at org.testng.TestRunner.privateRun(TestRunner.java:741)
 at org.testng.TestRunner.run(TestRunner.java:616)
 at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
-at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
-at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-at java.base/java.lang.Thread.run(Thread.java:842)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: java.lang.NullPointerException: Cannot invoke "java.util.List.size()" because "rows" is null
+at com.opencart.qa.utils.CsvUtil.csvData(CsvUtil.java:34)
+at com.opencart.qa.test.RegisterPageTest.getUserRegCSVTestData(RegisterPageTest.java:28)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:54)
+... 25 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- java.lang.RuntimeException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- homePageTitleTest -->
-        <test-method signature="logoutLinkExistTest()[pri:0, instance:com.opencart.qa.test.HomePageTest@640cc04b]" started-at="2026-05-13T18:47:07 IST" name="logoutLinkExistTest" finished-at="2026-05-13T18:47:08 IST" duration-ms="749" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- logoutLinkExistTest -->
-        <test-method signature="searchTest(java.lang.String,int)[pri:0, instance:com.opencart.qa.test.HomePageTest@640cc04b]" started-at="2026-05-13T18:47:08 IST" name="searchTest" data-provider="searchTestDataProvider" finished-at="2026-05-13T18:47:11 IST" duration-ms="2634" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[macbook]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[3]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- searchTest -->
-        <test-method signature="searchTest(java.lang.String,int)[pri:0, instance:com.opencart.qa.test.HomePageTest@640cc04b]" started-at="2026-05-13T18:47:11 IST" name="searchTest" data-provider="searchTestDataProvider" finished-at="2026-05-13T18:47:13 IST" duration-ms="2044" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[imac]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- searchTest -->
-        <test-method signature="searchTest(java.lang.String,int)[pri:0, instance:com.opencart.qa.test.HomePageTest@640cc04b]" started-at="2026-05-13T18:47:13 IST" name="searchTest" data-provider="searchTestDataProvider" finished-at="2026-05-13T18:47:25 IST" duration-ms="12401" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[airtel]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[0]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- searchTest -->
-        <test-method signature="searchTest(java.lang.String,int)[pri:0, instance:com.opencart.qa.test.HomePageTest@640cc04b]" started-at="2026-05-13T18:47:25 IST" name="searchTest" data-provider="searchTestDataProvider" finished-at="2026-05-13T18:47:27 IST" duration-ms="2423" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[canon]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- searchTest -->
-        <test-method signature="searchTest(java.lang.String,int)[pri:0, instance:com.opencart.qa.test.HomePageTest@640cc04b]" started-at="2026-05-13T18:47:27 IST" name="searchTest" data-provider="searchTestDataProvider" finished-at="2026-05-13T18:47:30 IST" duration-ms="2327" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[samsung]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[2]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- searchTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.opencart.qa.test.HomePageTest@640cc04b]" started-at="2026-05-13T18:47:30 IST" name="tearDown" finished-at="2026-05-13T18:47:30 IST" duration-ms="315" status="PASS">
+        </test-method> <!-- userRegisterTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.opencart.qa.test.RegisterPageTest@3a2b2322]" started-at="2026-05-20T21:39:47 IST" name="tearDown" finished-at="2026-05-20T21:39:47 IST" duration-ms="388" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.opencart.qa.test.HomePageTest -->
-    </test> <!-- Home Page Test -->
-  </suite> <!-- opencart login page regression suite -->
+      </class> <!-- com.opencart.qa.test.RegisterPageTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
